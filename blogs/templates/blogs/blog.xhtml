@@ -2,9 +2,12 @@
 
 {% block content %}
 
-<p>Blog: {{ Blog.text }}</p>
+<p>Blog: {{ Blog }}</p>
 
 <p>Posts:</p>
+<p>
+    <a href="{% url 'blogs:new_post' blog.id %}">Add new post</a>
+</p>
 
 <ul>
     {% for post in posts %}
