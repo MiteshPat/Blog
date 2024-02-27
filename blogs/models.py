@@ -13,4 +13,18 @@ class Blog(models.Model):
         return self.text
     
 
-# class blog_post
+class Post(models.Model):
+    # something a user enters into a blog
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    text = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = 'entries'
+
+    def __str__(self):
+        # return a simple string representing the entry
+        if len(self.text) > 50:
+            return f"{self.text[:50]}..."
+        else:
+            return self.text
