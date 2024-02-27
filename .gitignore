@@ -1,0 +1,8 @@
+kk_env/pyvenv.cfg
+kk_env/Lib
+kk_env/Scripts
+db.sqlite3
+kk_project/__pycache__/__init__.cpython-312.pyc
+kk_project/__pycache__/settings.cpython-312.pyc
+kk_project/__pycache__/urls.cpython-312.pyc
+kk_project/__pycache__/wsgi.cpython-312.pyc
