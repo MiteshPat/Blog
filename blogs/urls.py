@@ -17,5 +17,7 @@ urlpatterns = [
     path('new_blog/', views.new_blog, name='new_blog'),
     # page for adding a new post
     path('new_post/<int:blog_id>/', views.new_post, name='new_post'),
-    
+    # page for editing an post
+    path('edit_post/<int:post_id>/', views.edit_post, name='edit_post'),
+
 ]
