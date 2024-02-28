@@ -6,6 +6,13 @@
     {% else %}
         <a href="{% url 'accounts:login' %}">Log in</a>
     {% endif %}
+    {% if user.is_authenticated %}
+        <hr />
+        <form action="{% url 'accounts:logout' %}" method='post'>
+            {% csrf_token %}
+            <button name="submit">Log out</button>
+        </form>
+    {% endif %}
 </p>
 
 {% block content %}{% endblock content %}
