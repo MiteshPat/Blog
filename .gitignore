@@ -22,3 +22,4 @@ accounts/__pycache__/apps.cpython-312.pyc
 accounts/__pycache__/models.cpython-312.pyc
 accounts/__pycache__/urls.cpython-312.pyc
 accounts/migrations/__pycache__/__init__.cpython-312.pyc
+accounts/__pycache__/views.cpython-312.pyc
