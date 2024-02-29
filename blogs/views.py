@@ -12,7 +12,7 @@ def index(request):
 @login_required
 def blogs(request):
     # show all blogs
-    blogs = Blog.objects.order_by('date_added')
+    blogs = Blog.objects.filter(owner=request.user).order_by('date_added')
     context = {'blogs': blogs}
     return render(request, 'blogs/blogs.xhtml', context)
 
