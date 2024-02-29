@@ -16,6 +16,7 @@ def blogs(request):
     context = {'blogs': blogs}
     return render(request, 'blogs/blogs.xhtml', context)
 
+@login_required
 def blog(request, blog_id):
     # show a single blog and all it's posts
     blog = Blog.objects.get(id=blog_id)
@@ -26,6 +27,7 @@ def blog(request, blog_id):
 
     return render(request, 'blogs/blog.xhtml', context)
 
+@login_required
 def new_blog(request):
     # add a new blog
     if request.method != 'POST':
@@ -42,6 +44,7 @@ def new_blog(request):
     context = {'form': form}
     return render(request, 'blogs/new_blog.xhtml', context)
 
+@login_required
 def new_post(request, blog_id):
     # add a new post for a particular blog
     blog = Blog.objects.get(id=blog_id)
@@ -62,6 +65,7 @@ def new_post(request, blog_id):
     context = {'blog': blog, 'form': form}
     return render(request,'blogs/new_post.xhtml', context)
 
+@login_required
 def edit_post(request, post_id):
     # edit an existing post
     post = Post.objects.get(id=post_id)
