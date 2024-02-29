@@ -23,3 +23,4 @@ accounts/__pycache__/models.cpython-312.pyc
 accounts/__pycache__/urls.cpython-312.pyc
 accounts/migrations/__pycache__/__init__.cpython-312.pyc
 accounts/__pycache__/views.cpython-312.pyc
+blogs/migrations/__pycache__/0003_blog_owner.cpython-312.pyc
