@@ -1,18 +1,28 @@
 {% extends 'blogs/base.xhtml' %}
 
+{% block page_header %}
+<h1>Blogs</h1>
+{% endblock page_header %}
+
+
 {% block content %}
 
-<p>Blogs</p>
 
-<ul>
-    {% for blog in blogs %}
-    <li>
-        <a href="{% url 'blogs:blog' blog.id %}">
-        {{ blog.text }}</a></li>
-    </li>
-    {% empty %}
-    <li>No blogs have been entered yet/</li>
-    {% endfor %}
+<ul class="list-group border-bottom pb-2 mb-4">
+
+
+{% for blog in blogs %}
+    <div class="card mb-3">
+        <li class="list-group-item border-0">
+           <a href="{% url 'blogs:blog' blog.id %}">
+            {{ blog.text }}</a>
+        </li>
+        
+        
+    </div>
+{% empty %}
+    <li class="list-group-item border-0">No blogs have been entered yet/</li>
+{% endfor %}
 </ul>
 
 <a href="{% url 'blogs:new_blog' %}">Add a new blog</a>
