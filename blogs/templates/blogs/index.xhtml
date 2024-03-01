@@ -1,10 +1,20 @@
 {% extends 'blogs/base.xhtml' %}
 
-{% block content %}
+{% block page_header %}
+
+<div class="p-3 mb-4 bg-light border rounder-3">
+    <div class="container-fluid py-4">
+        <h1 class="display-3">Make interesting blogs.</h1>
+
+        <p class="lead">Blog allows users to enter posts for any blog they're interested in </p>
+        {% if user.is_authenticated %}
+        <p class="lead">Hello, {{ user.username }}.</p>
+        {% else %}
+        <a class="btn btn-primary btn-lg mt-1"
+        href="{% url 'accounts:register' %}">Register &raquo;</a>
+        {% endif %}
+    </div>
+</div>
 
 
-<p>Blog</p>
-
-<p>Blog allows users to enter posts for any blog they're interested in </p>
-
-{% endblock content %}
+{% endblock page_header %}
