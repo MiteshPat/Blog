@@ -1,0 +1,50 @@
+name: "kk_project"
+type:"python:3.12.2"
+
+relationships:
+  database: "dbpostgresql"
+
+# the configuration of the app when it's exposed to the web
+# postgres database is the relationship
+# start command tells gunicorn to handle requests
+# location tells platform.sh where to send incoming requests
+
+web:
+  upstream:
+    socket_family:unix
+  commands:
+    start:"gunicorn -w 4 -b unix:$SOCKET kk_project.wsgi:application"
+  
+  locations:
+    "/":
+      passthru: true
+    "/static":
+      root: "static"
+      expires: 1h
+      allow: true
+
+# the size of the persistent disk of the application (in MB)
+disk : 512
+
+# set a local read/write mount for logs
+mounts:
+  "logs":
+    source: local
+    source_path: logs
+
+# the hooks executed at various points in the lifecycle of the application
+# install all packages required to serve project in live
+# collect static so all the files needed for project in one place
+# deploy specifies migrations run each time project is deployed
+hooks:
+  build: |
+    pip install --upgrade pip
+    pip install -r requirements.txt
+    pip install -r requirements_remote.txt
+  
+    mkdir logs
+      python manage.py collectstatic
+    rm -rf logs
+
+    deploy: |
+      python manage.py migrate

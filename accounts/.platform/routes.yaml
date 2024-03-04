@@ -1,0 +1,10 @@
+# each route describes how incoming url will be processed
+# all get routed to same place
+
+"https://{default}/":
+  type: upstream
+  upstream: "ll_project:http"
+
+"https://www.{default}/":
+  type: redirect
+  to: "https://{default}/"
