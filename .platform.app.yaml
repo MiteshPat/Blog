@@ -1,8 +1,8 @@
 name: "kk_project"
-type:"python:3.12.2"
+type: "python:3.12.2"
 
 relationships:
-  database: "dbpostgresql"
+  database: "db:postgresql"
 
 # the configuration of the app when it's exposed to the web
 # postgres database is the relationship
