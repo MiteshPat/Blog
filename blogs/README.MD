@@ -1,1 +1,0 @@
-A Django project to represent functionality of blogs and posts.
