@@ -3,7 +3,7 @@
 
 "https://{default}/":
   type: upstream
-  upstream: "ll_project:http"
+  upstream: "kk_project:http"
 
 "https://www.{default}/":
   type: redirect
