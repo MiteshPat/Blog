@@ -6,3 +6,11 @@ Finally deployed the project onto Platform.sh so anyone can access the site and 
 ![msedge_jK6wTq4Ma1](https://github.com/MiteshPat/Blog/assets/41588229/ecc9aef6-11d8-4d18-8436-a122e3b65dd7)
 ![msedge_EyqFhOyCx3](https://github.com/MiteshPat/Blog/assets/41588229/420a3964-bfe8-4672-8984-fdbe561780d4)
 ![msedge_vcBN58sIwN](https://github.com/MiteshPat/Blog/assets/41588229/6e328a9a-265e-4759-96c7-17524654cc80)
+
+Acknowledgements PYTHON CRASH COURSE
+
+3RD EDITION
+
+A Hands-On, Project-Based Introduction to Programming
+
+by Eric Matthes
